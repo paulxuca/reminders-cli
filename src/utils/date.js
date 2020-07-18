@@ -23,7 +23,7 @@ function formatAMPM(date) {
   var ampm = hours >= 12 ? 'pm' : 'am';
   hours = hours % 12;
   hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
   var strTime = hours + ':' + minutes + ' ' + ampm;
   return strTime;
 }
@@ -38,7 +38,7 @@ export const parsePhrase = (phrase) => {
 
   const eventName = phrase.replace(parsedPhrase.text, '');
 
-  const startDate = parsedPhrase.start && moment(parsedPhrase.start.date()).format('DD/MM/YYYY-HH:mm').split('-');
+  const startDate = parsedPhrase.start && moment(parsedPhrase.start.date()).format('MM/DD/YYYY-HH:mm').split('-');
   startDate[1] = formatAMPM(parsedPhrase.start.date()).toUpperCase();
   const endDate = parsedPhrase.end && moment(parsedPhrase.end.date()).format('DD/MM/YYYY-HH:mm').split('-');
 

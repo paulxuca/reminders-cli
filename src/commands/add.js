@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import ora from 'ora';
 import inquirer from 'inquirer';
 import moment from 'moment';
-import { DateRange } from '../utils';
+import { DateRange, date } from '../utils';
 
 const tic = chalk.green('✓');
 const tac = chalk.red('✗');
@@ -76,7 +76,7 @@ const addReminder = async (providedArgs = {}) => {
     const datetime = moment(`${info.date} ${info.time}`, 'DD/MM/YYYY HH:mm').format('YYYY-MM-DD HH:mm');
     info.startDateTime = datetime;
     await applescript.execFile(scriptPath, Object.values(info));
-    
+
     spinner.stop();
 
     console.log(`${tic} Reminder created successfully!`);
