@@ -1,5 +1,5 @@
 {
-  "name": "reminders-cli",
+  "name": "@paulxuca/reminders-cli",
   "description": "Command-line interface that uses natural language processing to parse phrases and interact with Reminders.app.",
   "version": "0.1.0",
   "author": {
